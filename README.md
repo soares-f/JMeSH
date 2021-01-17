@@ -17,6 +17,10 @@ Thus, in our approach, we will make use of full sentences in English that contai
 
 However, since translating just one sentence for each term might lead to noisy results, we will look for a larget set of sentences containing the same English MeSH term and then translate them to Japanese. Using corpus linguistics tools, such as cross-language co-occurence analysis coupled with Expected Mutual Information Measure (EMIM).
 
+## Pipeline
+
+
+
 ## Resources
 
  - LitCovid (https://www.ncbi.nlm.nih.gov/research/pubtator/index.html?view=docsum&query=$LitCovid)
