@@ -19,7 +19,25 @@ However, since translating just one sentence for each term might lead to noisy r
 
 ## Pipeline
 
+1. Gathering all COVID articles with an assigned MeSH  
 
+2. For all MeSH in 1, check if there is already an equivalent in previous open Japanese MeSH
+  - For example, it may be possible that coagulopathy, pulmonary hypertension, and some cytokines are not already translated, so they would be good candidates.
+3. From the candidates, retrieve from the already tagged LitCovid corpus those entities (MeSH concepts) (with sentences in English).
+  - In a covid text: "Pulmonary embolism has a high prevalence in COVID-19 patients."
+  - Pulmonary embolism would have a MeSH, then we could get other sentences that have Pulmonary embolism, like "Pulmonary embolism is shown to increase the risk of death. The patient presented bilateral Pulmonary embolism" and so on.
+4. Use an MT system to get the translation from English to Japanese (for whole sentences to make use of full context)
+From the examples above:
+
+English | MT Japanese
+------------- | -------------
+**Pulmonary embolism** has a high prevalence in COVID-19 patients  | **肺塞栓症**はCOVID-19患者で高い有病率を示す
+**Pulmonary embolism** is shown to increase the risk of death | **肺塞栓症**は死亡リスクを高めることが示されている
+The patient presented bilateral **Pulmonary embolism** | 症例は両側性**肺塞栓症**を呈した。
+
+5. Using a frequency approach or other corpus linguistics approach, find possible Japanese equivalents.
+  - In the table above, it seems that **肺塞栓症** is a good candidate for pulmonary embolism.  
+Those Japanese equivalents could be a "starting point" for further research
 
 ## Resources
 
